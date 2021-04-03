@@ -11,6 +11,11 @@ import { increment, decrement, reset } from '../counter.actions';
 export class MyCounterComponent {
   count$: Observable<number>;
 
+  /**
+   * The count in the Store<{count: number}> must have the same name with 
+   * - store.select('count')
+   * - StoreModule.forRoot({count: counterReducer}) in the app.module.ts
+   */
   constructor(private store: Store<{ count: number }>) {
     this.count$ = store.select('count');
   }

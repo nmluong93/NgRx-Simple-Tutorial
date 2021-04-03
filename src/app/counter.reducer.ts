@@ -9,7 +9,9 @@ const _counterReducer = createReducer(
     on(decrement, (state) => state - 1),
     on(reset, (state) => 0)
 );
-
+/**
+ * Reducer is used to handle changes in the state (counter value) based on the proided action (increasement, decresement, .. in counter.action.ts)
+ */
 export function counterReducer(state: number | undefined, action: Action) {
     return _counterReducer(state, action);
 }
